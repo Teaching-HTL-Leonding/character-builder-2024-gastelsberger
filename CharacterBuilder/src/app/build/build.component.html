@@ -1,0 +1,55 @@
+<div class="container">
+  <nav class="navbar">
+    <h3>Character Builder</h3>
+    <p>Build</p>
+    <p>Randomizer</p>
+  </nav>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="eye">Eye:</label>
+      <select class="form-control" id="eye" name="eye">
+        <option value="noEye">No Eye</option>
+        <option value="halfOpen">Half Open</option>
+        <option value="closed">Closed</option>
+        <option value="open">Open</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" name="hasHammer" id="hasHammer">   Has Hammer
+    </div>
+
+    <div class="form-group">
+      <label for="mouthOne">Mouth:</label>
+      <select class="form-control" id="mouthOne" name="mouthOne">
+        <option value="noMouth">No Mouth</option>
+        <option value="happy">Happy</option>
+        <option value="normal">Normal</option>
+        <option value="unhappy">Unhappy</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="rightHand">Mouth:</label>
+      <select class="form-control" id="rightHand" name="mouthTwo">
+        <option value="noHand">No Hand</option>
+        <option value="normal">Normal</option>
+        <option value="victory">Victory</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" name="hasTail" id="hasTail">   Has Tail
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" id="buildImage">Build image</button>
+      <button class="btn btn-primary" id="feelingLucky">Feeling lucky...</button>
+    </div>
+  </form>
+
+  <div *ngIf="imageUrl.url">
+    <img [src]="imageUrl.url"/>
+  </div>
+</div>
