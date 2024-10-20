@@ -5,7 +5,7 @@
     <p>Randomizer</p>
   </nav>
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form">
     <div class="form-group">
       <label for="eye">Eye:</label>
       <select class="form-control" id="eye" name="eye">
@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group">
-      <input type="checkbox" name="hasHammer" id="hasHammer">   Has Hammer
+      <input type="checkbox" formControlName="hasHammer" id="hasHammer">   Has Hammer
     </div>
 
     <div class="form-group">
@@ -32,7 +32,7 @@
 
     <div class="form-group">
       <label for="rightHand">Mouth:</label>
-      <select class="form-control" id="rightHand" name="mouthTwo">
+      <select class="form-control" id="rightHand" name="rightHand">
         <option value="noHand">No Hand</option>
         <option value="normal">Normal</option>
         <option value="victory">Victory</option>
@@ -44,8 +44,8 @@
     </div>
 
     <div class="form-group">
-      <button class="btn btn-primary" id="buildImage">Build image</button>
-      <button class="btn btn-primary" id="feelingLucky">Feeling lucky...</button>
+      <button class="btn btn-primary" id="buildImage" (click)="onSubmit()">Build image</button>
+      <button class="btn btn-primary" id="feelingLucky" (click)="luckySubmit()">Feeling lucky...</button>
     </div>
   </form>
 

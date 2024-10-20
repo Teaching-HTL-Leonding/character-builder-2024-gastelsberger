@@ -46,4 +46,18 @@ export class BuildComponent {
 
     this.imageUrl = await this.apiService.createImage(imageData);
   }
+
+  async luckySubmit() {
+    const imageData : ImageData =  this.apiService.getRandomImage();
+
+    this.form.patchValue({
+      eye: imageData.eye,
+      hasHammer: imageData.hasHammer,
+      mouth: imageData.mouth,
+      rightHand: imageData.rightHand,
+      hasTail: imageData.hasTail,
+    });
+
+    this.imageUrl = await this.apiService.createImage(imageData);
+  }
 }
